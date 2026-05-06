@@ -1,0 +1,17 @@
+INFO:     127.0.0.1:51299 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51317 - "POST /api/agent/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51329 - "GET /api/agent/llm/runtime-profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55501 - "POST /api/agent/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55502 - "PATCH /api/agent/sessions/0dbe1975-bb87-46d8-828c-5673f0d6e90c/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55503 - "PATCH /api/agent/sessions/0dbe1975-bb87-46d8-828c-5673f0d6e90c/draft HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55504 - "PATCH /api/agent/sessions/0dbe1975-bb87-46d8-828c-5673f0d6e90c/role-cards HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55505 - "POST /api/agent/sessions/0dbe1975-bb87-46d8-828c-5673f0d6e90c/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "OPTIONS /api/agent/sessions/f379cee8-974b-4920-af18-4f881068bac2/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "PATCH /api/agent/sessions/f379cee8-974b-4920-af18-4f881068bac2/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "PATCH /api/agent/sessions/f379cee8-974b-4920-af18-4f881068bac2/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54290 - "PATCH /api/agent/sessions/f379cee8-974b-4920-af18-4f881068bac2/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58036 - "POST /api/agent/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58037 - "PATCH /api/agent/sessions/9f438f23-13aa-4cec-9d7c-3a3aa667d9b3/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58039 - "PATCH /api/agent/sessions/9f438f23-13aa-4cec-9d7c-3a3aa667d9b3/draft HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58040 - "PATCH /api/agent/sessions/9f438f23-13aa-4cec-9d7c-3a3aa667d9b3/role-cards HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58041 - "POST /api/agent/sessions/9f438f23-13aa-4cec-9d7c-3a3aa667d9b3/messages HTTP/1.1" 200 OK

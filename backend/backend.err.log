@@ -1,0 +1,85 @@
+INFO:     Started server process [2040]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+LLM request retrying url=https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions attempt=1/2 reason=ReadTimeout
+Agent turn provider retry failed provider=dashscope model=qwen-plus compact=False timeout=18s
+Traceback (most recent call last):
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+  File "E:\anaconda\anaconda3\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\app\services\llm_service.py", line 558, in _generate_agent_turn_with_provider
+    return await self._generate_agent_turn_with_dashscope(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\app\services\llm_service.py", line 960, in _generate_agent_turn_with_dashscope
+    return await self._generate_json_with_compatible_provider(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\app\services\llm_service.py", line 683, in _generate_json_with_compatible_provider
+    payload = await self._post_compatible_chat_completion(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\app\services\llm_service.py", line 604, in _post_compatible_chat_completion
+    return await self._post_json_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\app\services\llm_service.py", line 628, in _post_json_with_retries
+    response = await client.post(url, headers=headers, json=body)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_client.py", line 1859, in post
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "E:\anaconda\anaconda3\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "E:\topdesk\毕业设计\jbs_story_ai_assistant\backend\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+Agent turn fell back to mock provider=mock model=mock-story-model messages=2 draft_len=0
+Agent turn fell back to mock provider=mock model=mock-story-model messages=5 draft_len=154
+Agent turn fell back to mock provider=mock model=mock-story-model messages=2 draft_len=0
